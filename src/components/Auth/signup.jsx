@@ -1,6 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
+
+  const navigate = useNavigate();
+
+  const handleSignInClick = () => {
+    navigate('/mydashboard');
+  };
+
   return (
     <div>
       <section className="bg-black">
@@ -14,14 +22,14 @@ const Signup = () => {
               <h1 className="text-xl font-bold leading-tight text-center tracking-tight text-gray-900 md:text-2xl">
                 Sign in to your account
               </h1>
-              <form className="space-y-4 md:space-y-6" action="/mydashboard">
+              <form className="space-y-4 md:space-y-6" action="">
                 <div>
                   <label htmlFor="email" className="block mb-2 text-sm font-medium">Your email</label>
-                  <input type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="myemail@company.com" />
+                  <input type="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="myemail@company.com" />
                 </div>
                 <div>
                   <label htmlFor="password" className="block mb-2 text-sm font-medium">Password</label>
-                  <input type="password" name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" />
+                  <input type="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" />
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-start">
@@ -34,7 +42,7 @@ const Signup = () => {
                   </div>
                   <a href="#" className="text-sm font-medium text-primary-600 hover:underline">Forgot password?</a>
                 </div>
-                <button type="submit" className="w-full text-white bg-orange focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Sign in</button>
+                <button className="w-full text-white bg-orange focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center" onClick={handleSignInClick}>Sign in</button>
                 <p className="text-sm font-light text-gray-500">
                   Don’t have an account yet? <a href="#" className="font-medium text-primary-600 hover:underline">Sign up</a>
                 </p>
